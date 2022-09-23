@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+.encabezado {
+    background-color: brown;
+    height: 10rem;
+}
+
+.card {
+    width: 18rem;
+}
+
+.imgs-carrito{
+    border-radius: 20px;
+    height: 20%;
+    width: 20%;
+}
+
+.carritoEstilo {
+    border-radius: 20px;
+    width: 80vw;
+    margin: auto;
+    padding: 20px;
+    background-color:rgb(78, 78, 126);
+}
+
+.productos-caracteristicas {
+    font-size: 1.2rem;
+    font-weight: 650;
+    display: flex;
+    align-items: center;
+}
+
+.cartelBienvenida {
+    min-height: fit-content;
+}
+
+.botonesIngreso {
+    background-color:rgb(181, 197, 209);
+    border-radius: 0.5rem;
+    border-style: solid;
+    border-color: brown;
+    border-width: 0.1rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: clamp(16px, 40px, 80px);
+
+}
+
+.botonesIngreso:hover {
+    transform: scale(1.025);
+    transition: all 0.1s;
+    background-color:rgb(101, 176, 233);
+    font-weight: bold;
+    box-shadow: 10px 12px 14px -7px rgba(0, 0, 0, 0.55);
+    -webkit-box-shadow: 10px 12px 14px -7px rgba(0, 0, 0, 0.55);
+    -moz-box-shadow: 10px 12px 14px -7px rgba(0, 0, 0, 0.55);
+}
+
+
+body {
+    background: linear-gradient(to bottom, rgb(194, 116, 116), rgb(128, 128, 190));
+}
+   
+.gondola{
+    min-height: fit-content;
+}
+
+footer {
+    background-color: brown;
+}
