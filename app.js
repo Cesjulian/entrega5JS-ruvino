@@ -13,15 +13,20 @@ boton.addEventListener("click", respuesta);
 
 
 function respuesta() {
+    
+    if (localStorage.getItem("carritoGuardado")) {
+
+        carroVacio = JSON.parse(localStorage.getItem("carritoGuardado"));
+        vistaCarrito();
+        
+    }
+    
     let cambio = document.getElementById("cartelIngreso");
     cambio.innerHTML = "";
 
     insertarCards();
-    recuperacion();
+
 }
-
-
-
 
 const insertarCards = () => {
 
@@ -42,24 +47,30 @@ const insertarCards = () => {
 }
 
 const agregado = (indice) => {
+
     let indexArticulos = carroVacio.findIndex((elemento)=>{
+
         return elemento.id === gondolas[indice].id
+
     });
     if (indexArticulos === -1) {
+
         let meterDentro = gondolas[indice]
         meterDentro.cantidad = 1;
         carroVacio.push(meterDentro);
         vistaCarrito();
+
     } else {
+
         carroVacio[indexArticulos].cantidad += 1;
         vistaCarrito();
+
     }
 
 }
 
 let total = 0;
 let carroVacio = [];
-
 let contenedor2 = document.getElementById("carrito");
 
 const vistaCarrito = () => {
@@ -87,15 +98,8 @@ const vistaCarrito = () => {
 }
 
 const subidaJson = () => {
+
     let carritoStr = JSON.stringify(carroVacio);
 
     let copiaSeguridad = localStorage.setItem ("carritoGuardado", carritoStr)
 }
-
-
-
-
-
-
-
-
