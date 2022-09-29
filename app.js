@@ -11,6 +11,22 @@ let gondolas = [
 let boton = document.getElementById("tienda");
 boton.addEventListener("click", respuesta);
 
+let botones2 = document.getElementById("boton2")
+botones2.addEventListener("click", respuesta2)
+
+let botones3 = document.getElementById("boton3")
+botones3.addEventListener("click", respuesta2)
+
+function respuesta2 () {
+    Swal.fire({
+        title: 'En construcción',
+        text: 'probá ingresando a la tienda =)',
+        imageUrl: './imagenes/mono.jpg',
+        imageWidth: 400,
+        imageHeight: 300,
+        imageAlt: 'Custom image',
+      })
+}
 
 function respuesta() {
     
@@ -48,11 +64,23 @@ const insertarCards = () => {
 
 const agregado = (indice) => {
 
+    Toastify({
+        text: `agregaste este articulo al carrito!`,
+        duration: 2000,
+        newWindow: true,
+        close: true,
+        gravity: "top", 
+        position: "right", 
+        stopOnFocus: true, 
+        className: "cartelToasty",
+    }).showToast();
+
     let indexArticulos = carroVacio.findIndex((elemento)=>{
 
         return elemento.id === gondolas[indice].id
 
     });
+
     if (indexArticulos === -1) {
 
         let meterDentro = gondolas[indice]

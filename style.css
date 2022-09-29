@@ -1,3 +1,5 @@
+
+
 * {
     margin: 0;
     padding: 0;
@@ -59,6 +61,15 @@
     -moz-box-shadow: 10px 12px 14px -7px rgba(0, 0, 0, 0.55);
 }
 
+.cartelToasty{
+    background: rgb(212, 212, 65);
+    color: black;
+    font-weight: 500;
+    border-radius: 1em;
+    border-style: solid;
+    border-color: rgb(73, 73, 20);
+    
+}
 
 body {
     background: linear-gradient(to bottom, rgb(194, 116, 116), rgb(128, 128, 190));
