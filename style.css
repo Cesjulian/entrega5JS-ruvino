@@ -29,11 +29,30 @@
     background-color:rgb(78, 78, 126);
 }
 
+.finalizacionEstilo {
+    border-radius: 20px;
+    width: 80vw;
+    height: 65vh;
+    margin: auto;
+    padding: 20px;
+    background-color:rgba(241, 217, 79, 0.904);
+    color: #000;
+    border: solid;
+    border-color:rgba(68, 60, 16, 0.904);
+}
+
+.btnColor {
+    color: #000;
+    border-color:rgb(27, 39, 22);
+    background-color:rgb(93, 126, 78);
+}
+
 .productos-caracteristicas {
     font-size: 1.2rem;
     font-weight: 650;
     display: flex;
     align-items: center;
+    color: black;
 }
 
 .cartelBienvenida {
@@ -68,7 +87,16 @@
     border-radius: 1em;
     border-style: solid;
     border-color: rgb(73, 73, 20);
-    
+}
+
+.estiloTotal{
+    border-radius: 20px;
+    width: 60vw;
+    padding: 20px;
+    color: #000;
+    border: solid;
+    border-color:rgb(27, 39, 22);
+    background-color:rgb(93, 126, 78);
 }
 
 body {
