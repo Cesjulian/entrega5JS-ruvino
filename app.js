@@ -93,13 +93,15 @@ const agregado = (indice) => {
     .then((Resp)=> Resp.json())
     .then((gondolas)=>{
 
-        let indexArticulos = carroVacio.findIndex((elemento)=>{
+        indexArticulos = carroVacio.findIndex((elemento)=>{
             
             return elemento.id === gondolas[indice]
 
         })
 
     })
+
+    let indexArticulos;
     
     if ( indexArticulos === -1) {
         
