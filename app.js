@@ -93,29 +93,26 @@ const agregado = (indice) => {
     .then((Resp)=> Resp.json())
     .then((gondolas)=>{
 
-        indexArticulos = carroVacio.findIndex((elemento)=>{
+        let indexArticulos = carroVacio.findIndex((elemento)=>{
             
-            return elemento.id === gondolas[indice]
+            return elemento.id === gondolas[indice].id;
 
-        })
+        });
 
+        if ( indexArticulos === -1) {
+
+            let meterDentro = gondolas[indice];
+            meterDentro.cantidad = 1;
+            carroVacio.push(meterDentro);
+            vistaCarrito();
+
+        } else {
+
+            carroVacio[indexArticulos].cantidad += 1;
+            vistaCarrito(); 
+        }
     })
 
-    let indexArticulos;
-    
-    if ( indexArticulos === -1) {
-        
-        let meterDentro = gondolas[indice].id
-        meterDentro.cantidad = 1;
-        carroVacio.push(meterDentro);
-        vistaCarrito();
-        
-    } else {
-
-        carroVacio[indexArticulos].cantidad += 1;
-        vistaCarrito();
-        
-    }
 }
 
 total = 0;
