@@ -1,13 +1,3 @@
-/*let gondolas = [
-    {id : 1, nombre : "Parrilla de 90 cm", precio : 1000, marca : "parrillas zona sur", imagen : "./imagenes/parrilla-completa.jpg",},
-    {id : 2, nombre : "Brasero De Mesa Enlozado", precio : 1200, marca : "parrillas zona sur", imagen : "./imagenes/Brasero-De-Mesa-Enlozado-Clasico.jpg",},
-    {id : 3, nombre : "Tabla AL Recta (50X30)", precio : 800, marca : "parrillas zona sur", imagen : "./imagenes/Tabla-Recta.jpg",},
-    {id : 4, nombre : "Juego Parrillero Forjado", precio : 4500, marca : "parrillas zona sur", imagen : "./imagenes/Juego-Parrillero-Forjado-Triple-Gris-con-Soporte.jpg",},
-    {id : 5, nombre : "fogon tamaño medio", precio : 2350, marca : "parrillas zona sur", imagen : "./imagenes/fogon tamaño medio.jpg",},
-    {id : 6, nombre : "Disco c/patas Desmontables", precio : 1890, marca : "parrillas zona sur", imagen : "./imagenes/Disco c patas desmontable.jpg",},
-    {id : 7, nombre : "Asador Redondo 120 cm", precio : 3700, marca : "parrillas zona sur", imagen : "./imagenes/Asador Redondo 120 cm.jpg",},
-];*/
-
 // BOTONES DE INGRESOS SECCIONES PAGINAS
 let boton = document.getElementById("tienda");
 boton.addEventListener("click", respuesta);
