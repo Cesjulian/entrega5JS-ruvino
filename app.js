@@ -13,6 +13,8 @@ function respuesta2 () {
     Swal.fire({
         title: 'En construcción',
         text: 'probá ingresando a la tienda =)',
+        background: 'rgb(212, 212, 65)',
+        color: 'black',
         imageUrl: './imagenes/mono.jpg',
         imageWidth: 400,
         imageHeight: 300,
@@ -38,9 +40,9 @@ function respuesta() {
 }
 
 // GENERAR CARDS
-const insertarCards = () => {
+let contenedor = document.getElementById("container");
 
-    let contenedor = document.getElementById("container");
+const insertarCards = () => {
 
     fetch(`/data.json`)
     .then((Resp)=> Resp.json())
@@ -112,7 +114,7 @@ let contenedor2 = document.getElementById("carrito");
 // GENERAR CARRITO
 const vistaCarrito = () => {
 
-    contenedor2.className = "carritoEstilo";
+    contenedor2.className = "carritoEstilo mt-3 mb-3";
     contenedor2.innerHTML = "";
 
     if (carroVacio.length > 0) {
@@ -190,32 +192,86 @@ function actualizarTotal() {
 
 function vaciarCarrito () {
 
-    carroVacio = [];
-    localStorage.clear(); 
+    const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+          confirmButton: 'btn btn-success m-3',
+          cancelButton: 'btn btn-danger m-3'
+        },
+        buttonsStyling: false
+      })
+      
+      swalWithBootstrapButtons.fire({
+        background: 'rgb(212, 212, 65)',
+        color: 'black',
+        title: 'estas a punto de vaciar el carrito ¿estas seguro?',
+        text: "se van a borrar los articulos guardados",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'vaciar',
+        cancelButtonText: 'cancelar',
+        reverseButtons: true
+      }).then((result) => {
+        
+        if (result.isConfirmed) {
 
-    contenedor2.className = "";
-    contenedor2.innerHTML = "";
+            carroVacio = [];
+            localStorage.clear(); 
+        
+            contenedor2.className = "";
+            contenedor2.innerHTML = "";
 
+          swalWithBootstrapButtons.fire(
+            { background: 'rgb(212, 212, 65)',
+            color: 'black',
+            title: 'ahora tu carrito está vacío',
+            }
+            )
+        }
+      })
 }
 
 function ejecutarCarrito() {
 
-    contenedor2.className="";
-    contenedor2.classList.add("finalizacionEstilo", "d-flex","flex-column", "justify-content-between")
-    contenedor2.innerHTML = 
-    `
-    <div class="d-flex justify-content-center">
-        <h1 class="text-center">
-            <br> felicitaciones usuario! completaste tu compra <br>
-            <br> el total de tu compra es de $ ${total}.- <br>
-        </h1>
-    </div>
-    <div class="d-flex justify-content-center">
-        <p class = "text-center">(si volves a agregar alguna cantidad de algún articulo vas a poder volver a visualizar el carrito)</p>
-    </div>
-    `;
+    const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+          confirmButton: 'btn btn-success m-3',
+          cancelButton: 'btn btn-danger m-3'
+        },
+        buttonsStyling: false
+      })
+      
+      swalWithBootstrapButtons.fire({
+        background: 'rgb(212, 212, 65)',
+        color: 'black',
+        title: '¿estas seguro que deseas ejecutar este carrito?',
+        text: "vas a ver la suma total de tu carrito",
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonText: 'finalizar compra',
+        cancelButtonText: 'seguir en la tienda',
+        reverseButtons: true
+      }).then((result) => {
+        
+        if (result.isConfirmed) {
 
+            contenedor2.className="";
+            contenedor2.classList.add("finalizacionEstilo", "d-flex","flex-column", "justify-content-center", "mt-4", "mb-4")
+            contenedor2.innerHTML = 
+            `
+            <div class="d-flex justify-content-center">
+                <h1 class="text-center">
+                    <br> felicitaciones usuario! completaste tu compra <br>
+                    <br> el total de tu compra es de $ ${total}.- <br>
+                </h1>
+            </div>`;
+        
+            contenedor.innerHTML ="";
+            carroVacio = [];
+            localStorage.clear(); 
+        }
+      })
 }
+
 
 const subidaJson = () => {
 
