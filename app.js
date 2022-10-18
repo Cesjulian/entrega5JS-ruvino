@@ -44,7 +44,7 @@ let contenedor = document.getElementById("container");
 
 const insertarCards = () => {
 
-    fetch(`/data.json`)
+    fetch(`data.json`)
     .then((Resp)=> Resp.json())
     .then((gondolas)=>{
 
@@ -81,7 +81,7 @@ const agregado = (indice) => {
     }).showToast();
     
 
-    fetch(`/data.json`)
+    fetch(`data.json`)
     .then((Resp)=> Resp.json())
     .then((gondolas)=>{
 
@@ -116,6 +116,12 @@ const vistaCarrito = () => {
 
     contenedor2.className = "carritoEstilo mt-3 mb-3";
     contenedor2.innerHTML = "";
+
+    /*
+    if (carroVacio.length === 0) {
+        localStorage.clear();
+    }
+    */
 
     if (carroVacio.length > 0) {
 
