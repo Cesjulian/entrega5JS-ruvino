@@ -117,11 +117,9 @@ const vistaCarrito = () => {
     contenedor2.className = "carritoEstilo mt-3 mb-3";
     contenedor2.innerHTML = "";
 
-    /*
     if (carroVacio.length === 0) {
         localStorage.clear();
     }
-    */
 
     if (carroVacio.length > 0) {
 
