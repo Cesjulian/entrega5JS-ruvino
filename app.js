@@ -44,7 +44,7 @@ let contenedor = document.getElementById("container");
 
 const insertarCards = () => {
 
-    fetch(`data.json`)
+    fetch(`./data.json`)
     .then((Resp)=> Resp.json())
     .then((gondolas)=>{
 
@@ -81,7 +81,7 @@ const agregado = (indice) => {
     }).showToast();
     
 
-    fetch(`data.json`)
+    fetch(`./data.json`)
     .then((Resp)=> Resp.json())
     .then((gondolas)=>{
 
