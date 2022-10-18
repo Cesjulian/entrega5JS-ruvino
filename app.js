@@ -117,10 +117,6 @@ const vistaCarrito = () => {
     contenedor2.className = "carritoEstilo mt-3 mb-3";
     contenedor2.innerHTML = "";
 
-    if (carroVacio.length === 0) {
-        localStorage.clear();
-    }
-
     if (carroVacio.length > 0) {
 
         carroVacio.forEach((producto, indice) => {
@@ -143,6 +139,11 @@ const vistaCarrito = () => {
 
             subidaJson();
         });
+
+    } else {
+        localStorage.clear();
+        contenedor2.className = "";
+        contenedor2.innerHTML = "";
     }
 
     // ACTUALIZACION DEL TOTAL
